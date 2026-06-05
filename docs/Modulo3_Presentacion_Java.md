@@ -45,9 +45,14 @@ Relaciones:
 5. Si hay derivacion, conserva codigo y pasa primero en nueva area.
 
 ## Diapositiva 6.1 - Interfaz implementada
-- Menu principal de consola para autogestion, login y pantalla de sala.
+- Menu principal de consola para autogestion, login, pantalla de sala y ABM de areas/boxes.
 - Menu de operador con seleccion de box, llamado, derivacion y cierre de atencion.
 - Visualizacion de metricas de espera y atencion.
+
+## Diapositiva 6.2 - Seguridad y acceso
+- Login por usuario y password.
+- Password almacenada como hash (SHA-256 + Base64) en tabla operador.
+- Operadores cargados desde MySQL.
 
 ## Diapositiva 7 - Estructuras y algoritmos
 - `LinkedList` para cola de espera por area.

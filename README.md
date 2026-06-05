@@ -19,31 +19,22 @@ Este proyecto implementa un prototipo del Sistema Integral de Gestion de Turnos,
 - `db/clinica_qms.sql`: Script de base de datos para XAMPP/MySQL.
 - `docs/Modulo3_Explicacion_Desarrollo_Java.md`: Entregable de explicacion.
 - `docs/Modulo3_Presentacion_Java.md`: Entregable para presentacion.
+- `docs/Como_Ejecutar_QMS.md`: Guia de ejecucion actualizada paso a paso.
 
 ## Como ejecutar
-1. Importar la BD en XAMPP (phpMyAdmin o consola):
-   - Crear/importar con `db/clinica_qms.sql`.
-2. Configurar variables de entorno para usar MySQL:
-   - `QMS_REPO=mysql`
-   - `QMS_DB_URL=jdbc:mysql://localhost:3306/clinica_qms`
-   - `QMS_DB_USER=root`
-   - `QMS_DB_PASSWORD=`
-3. Compilar:
-   - `mvn clean compile`
-4. Ejecutar interfaz de consola:
-   - `mvn exec:java`
+Ver guia completa en `docs/Como_Ejecutar_QMS.md`.
+
+Resumen rapido (modo MySQL):
+1. Importar BD con `db/clinica_qms.sql`.
+2. Configurar `QMS_REPO`, `QMS_DB_URL`, `QMS_DB_USER`, `QMS_DB_PASSWORD`.
+3. Ejecutar con Maven (`mvn clean compile` + `mvn exec:java`) o sin Maven (javac + classpath con `mysql-connector-j`).
 
 ## Ejecucion sin Maven (como se valido en este entorno)
-1. Compilar:
-   - `javac --release 8 -d out (Get-ChildItem -Recurse -Filter *.java src\main\java | ForEach-Object { $_.FullName })`
-2. Ejecutar interfaz:
-   - `java -cp out com.clinica.qms.App`
-3. Ejecutar pruebas CP:
-   - `java -cp out com.clinica.qms.tests.QmsUnitTests`
+Seguir `docs/Como_Ejecutar_QMS.md` para incluir el driver MySQL en el classpath.
 
 ## Login de operadores (modo MySQL)
 - Los operadores se leen desde la tabla `operador`.
-- Si la tabla esta vacia, la app crea usuarios semilla con password hasheada (BCrypt):
+- Si la tabla esta vacia, la app crea usuarios semilla con password hasheada (SHA-256 + Base64):
    - `lperez / admin123`
    - `tacosta / lab123`
    - `nruiz / inter123`

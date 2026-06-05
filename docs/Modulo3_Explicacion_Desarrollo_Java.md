@@ -37,7 +37,7 @@ La persistencia se abstrae con la interfaz `TurnoRepository`, permitiendo reempl
 
 ### 5.1. Interfaz implementada
 La interfaz de consola cubre el flujo solicitado:
-- Login de operador por usuario y password (validado con hash BCrypt).
+- Login de operador por usuario y password (validado con hash SHA-256 + Base64).
 - Seleccion de box en el area asignada.
 - Llamado del siguiente paciente.
 - Derivacion manteniendo el mismo codigo de turno y prioridad alta.
@@ -52,6 +52,13 @@ El archivo `db/clinica_qms.sql` crea:
 - Indices para optimizar busquedas por area/estado/prioridad.
 - Datos semilla de areas y boxes.
 - Operadores y contraseñas almacenados en la tabla `operador` (password hash).
+
+## 6.1. Ejecucion del sistema
+La guia de ejecucion actualizada se encuentra en `docs/Como_Ejecutar_QMS.md`.
+Incluye:
+- Ejecucion con Maven.
+- Ejecucion sin Maven (javac + classpath de `mysql-connector-j`).
+- Variables de entorno para modo MySQL.
 
 ## 7. Resultado
 El proyecto cumple con el enfoque del Modulo 3:
