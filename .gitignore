@@ -1,0 +1,19 @@
+# Java build outputs
+out/
+target/
+
+# JDBC driver (descargar segun docs/GUIA.md)
+lib/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs generados al ejecutar
+logs/
+*.log
